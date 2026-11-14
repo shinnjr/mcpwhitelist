@@ -1,0 +1,15 @@
+{
+  "name": "@shinnjr/mcpwhitelist",
+  "version": "1.0.0",
+  "description": "SHA-512 mcp-lock.json generator, postinstall trap detector, and README security badge verifier via mcpwhitelist.com.",
+  "type": "module",
+  "bin": {
+    "mcpwhitelist": "./bin/mcpwhitelist.mjs"
+  },
+  "scripts": {
+    "test": "node --test test/cli.test.mjs"
+  },
+  "keywords": ["mcp", "security", "lockfile", "soc2", "ai-agents"],
+  "author": "James Shinn",
+  "license": "MIT"
+}
