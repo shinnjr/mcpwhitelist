@@ -1,0 +1,18 @@
+name: "Open Agent Safety Registry Gate"
+description: "Verify mcp.json, npm, PyPI, Cargo, and Go dependencies against Open Agent Safety Registry (blocks confirmed malware, CVEs, and hidden install hooks)."
+author: "Open Agent Safety Registry"
+branding:
+  icon: "shield"
+  color: "green"
+inputs:
+  config_path:
+    description: "Optional path to mcp.json config file to scan"
+    required: false
+    default: ""
+runs:
+  using: "composite"
+  steps:
+    - name: Run Open Agent Safety Registry Lockfile & Malware Check
+      shell: bash
+      run: |
+        curl -fsSL https://mcpwhitelist.com/cli.mjs | node - --json
