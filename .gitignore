@@ -1,0 +1,8 @@
+dist/
+build/
+*.egg-info/
+__pycache__/
+*.pyc
+.pytest_cache/
+.DS_Store
+mcp-lock.json

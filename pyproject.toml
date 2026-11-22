@@ -1,0 +1,32 @@
+[build-system]
+requires = ["hatchling>=1.24.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mcpwhitelist"
+version = "1.1.0"
+description = "MCP supply-chain security CLI, SHA-512 mcp-lock.json compiler, and STDIO MCP server backed by mcpwhitelist.com and agentwhitelist.com."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+authors = [{ name = "James Shinn" }]
+keywords = ["mcp", "security", "lockfile", "soc2", "ai-agents", "supply-chain"]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Topic :: Security",
+]
+
+[project.urls]
+Homepage = "https://mcpwhitelist.com"
+Registry = "https://agentwhitelist.com"
+Repository = "https://github.com/shinnjr/mcpwhitelist"
+"Open Threat Feeds" = "https://agentwhitelist.com/open-data"
+
+[project.scripts]
+mcpwhitelist = "mcpwhitelist.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/mcpwhitelist"]
