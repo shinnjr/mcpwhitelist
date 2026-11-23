@@ -4,8 +4,6 @@ Zero external secrets or API keys are required for public verification lookups.
 
 ## Option 1: Remote Streamable HTTP MCP (No Local Process Required)
 
-Connect directly to the hosted Streamable HTTP endpoint:
-
 - URL: `https://mcpwhitelist.com/mcp`
 
 ```json
@@ -18,24 +16,29 @@ Connect directly to the hosted Streamable HTTP endpoint:
 }
 ```
 
-## Option 2: Local Node.js STDIO MCP Server
+## Option 2: 1-Line Node.js STDIO MCP Server (`npx` Directly From GitHub)
 
 Requires Node.js 18+:
-
-```bash
-git clone https://github.com/shinnjr/mcpwhitelist.git
-cd mcpwhitelist
-node bin/mcpwhitelist.mjs --mcp
-```
-
-Add to `cline_mcp_settings.json`, `claude_desktop_config.json`, or `.cursor/mcp.json`:
 
 ```json
 {
   "mcpServers": {
     "mcpwhitelist": {
-      "command": "node",
-      "args": ["/path/to/mcpwhitelist/bin/mcpwhitelist.mjs", "--mcp"]
+      "command": "npx",
+      "args": ["--yes", "github:shinnjr/mcpwhitelist", "--mcp"]
+    }
+  }
+}
+```
+
+## Option 3: 1-Line Python STDIO MCP Server (`uvx` / `pip`)
+
+```json
+{
+  "mcpServers": {
+    "mcpwhitelist": {
+      "command": "uvx",
+      "args": ["--from", "git+https://github.com/shinnjr/mcpwhitelist.git", "mcpwhitelist", "--mcp"]
     }
   }
 }

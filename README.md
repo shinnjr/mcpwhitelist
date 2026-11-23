@@ -11,33 +11,36 @@
 - **Neutral Governance & Grants:** https://agentwhitelist.com/governance
 - **Report Malware / Appeal Flag:** https://agentwhitelist.com/dispute
 
-## 1-Line Zero-Secret Config Scanner & SHA-512 Lockfile Generator
+## Instant Zero-Account Install (Node & Python Directly From GitHub)
+
+Run directly with zero registry account setup:
 
 ```bash
-curl -fsSL https://mcpwhitelist.com/cli.mjs | node - --write-lockfile
+# Node.js CLI & lockfile verification
+npx --yes github:shinnjr/mcpwhitelist --help
+npx --yes github:shinnjr/mcpwhitelist --badge gh-claude-code
+
+# Python CLI via uvx or pip
+uvx --from git+https://github.com/shinnjr/mcpwhitelist.git mcpwhitelist --check claude-code
+pip install git+https://github.com/shinnjr/mcpwhitelist.git
 ```
 
-Or run the CLI directly from this repository (`bin/`):
+Prebuilt `.whl`, `.tar.gz`, and `.tgz` release archives are attached on every [GitHub Release](https://github.com/shinnjr/mcpwhitelist/releases).
 
-```bash
-node bin/mcpwhitelist.mjs --config mcp.json --write-lockfile
-node bin/mcpwhitelist.mjs --badge gh-claude-code
-```
-
-## STDIO MCP Server Configuration (Claude Desktop / Cursor)
+## STDIO MCP Server Configuration (Claude Desktop / Cursor / Cline)
 
 ```json
 {
   "mcpServers": {
     "mcpwhitelist": {
-      "command": "node",
-      "args": ["./bin/mcpwhitelist.mjs", "--mcp"]
+      "command": "npx",
+      "args": ["--yes", "github:shinnjr/mcpwhitelist", "--mcp"]
     }
   }
 }
 ```
 
-Streamable HTTP MCP endpoint: `https://mcpwhitelist.com/mcp` · Listed for [Glama MCP Servers](https://glama.ai/mcp/servers) discovery (`glama.json`).
+Or run the zero-dependency Python STDIO server (`uvx --from git+https://github.com/shinnjr/mcpwhitelist.git mcpwhitelist --mcp`) or connect directly via Streamable HTTP MCP at `https://mcpwhitelist.com/mcp`.
 
 ## Reusable GitHub Composite Action (`action.yml`)
 

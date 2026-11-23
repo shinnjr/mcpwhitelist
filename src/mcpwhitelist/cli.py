@@ -6,7 +6,7 @@ import urllib.parse
 import urllib.request
 
 DEFAULT_HOST = "mcpwhitelist.com"
-USER_AGENT = "mcpwhitelist-py/1.1.0"
+USER_AGENT = "mcpwhitelist-py/1.2.0"
 
 
 def badge_markdown(slug: str, host: str = DEFAULT_HOST) -> str:

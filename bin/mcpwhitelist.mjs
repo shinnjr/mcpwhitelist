@@ -2,6 +2,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import readline from "node:readline";
+import { pathToFileURL } from "node:url";
 
 export function parseMcpPackages(configObj) {
   const servers = configObj?.mcpServers || {};
@@ -136,7 +137,8 @@ async function main() {
   }
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+const isMain = Boolean(process.argv[1]) && import.meta.url === pathToFileURL(fs.realpathSync(process.argv[1])).href;
+if (isMain) {
   main().catch((err) => {
     console.error(err.message);
     process.exit(1);

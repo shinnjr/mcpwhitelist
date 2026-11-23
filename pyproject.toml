@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "mcpwhitelist"
-version = "1.1.0"
+version = "1.2.0"
 description = "MCP supply-chain security CLI, SHA-512 mcp-lock.json compiler, and STDIO MCP server backed by mcpwhitelist.com and agentwhitelist.com."
 readme = "README.md"
 license = { text = "MIT" }

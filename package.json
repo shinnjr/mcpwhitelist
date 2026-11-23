@@ -1,6 +1,6 @@
 {
   "name": "@shinnjr/mcpwhitelist",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "MCP server & CLI for SHA-512 mcp-lock.json generation, postinstall trap detection, and README security badges via mcpwhitelist.com.",
   "type": "module",
   "homepage": "https://mcpwhitelist.com",
@@ -8,6 +8,12 @@
     "type": "git",
     "url": "https://github.com/shinnjr/mcpwhitelist.git"
   },
+  "files": [
+    "bin/",
+    "README.md",
+    "LICENSE",
+    "llms-install.md"
+  ],
   "bin": {
     "mcpwhitelist": "./bin/mcpwhitelist.mjs"
   },
